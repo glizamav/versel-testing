@@ -3,10 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './vistas/home/home.component';
+import { RegistroComponent } from './vistas/registro/registro.component';
+import { TiendaComponent } from './vistas/tienda/tienda.component';
+import { LoginComponent } from './vistas/login/login.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    RegistroComponent,
+    TiendaComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
