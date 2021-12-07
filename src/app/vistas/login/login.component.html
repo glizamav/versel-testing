@@ -1,1 +1,36 @@
-<p>login works!</p>
+<h1>VISTA LOGIN</h1>
+<h1>Formularios</h1>
+
+<form [formGroup]="formContacto" (ngSubmit)="submit()">
+    <label>Nombre</label><br>
+    <input type="text" formControlName="nombre" class="form-control" required><br>
+    <span *ngIf="this.formContacto.controls['nombre'].errors?.['required']">
+        Debe completar Nombre
+    </span>
+    <!--
+    <span *ngIf="formContacto.controls['nombre'].errors?.['required']">
+        Debe completar Nombre
+    </span>
+    <span *ngIf="formContacto.get['nombre'].errors?.minlength">
+        Debe tener minimo 10 caracteres
+    </span><br>-->
+    <label>Email:</label><br>
+    <input type="email" formControlName="email" class="form-control">
+    <span *ngIf="this.formContacto.controls['email'].errors?.['email']">
+        Email no válido
+    </span>
+   <br>
+    <label>ASunto:</label>
+    <textarea rows="10" cols="20" formControlName="asunto" class="form-control"></textarea>
+    <!--
+    <div *ngIf="formContacto.get['asunto'].errors?.maxlength">
+        <p>debe tener maximo 140 caracteres</p>
+    </div>-->
+    <button class="btn-outline-success" type="submit">Enviar</button>
+</form>
+<div>
+    {{mostrar}}
+</div>
+<button (click)="check()">Enviar</button>
+
+{{datos}}

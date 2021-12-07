@@ -7,7 +7,7 @@ import { HomeComponent } from './vistas/home/home.component';
 import { RegistroComponent } from './vistas/registro/registro.component';
 import { TiendaComponent } from './vistas/tienda/tienda.component';
 import { LoginComponent } from './vistas/login/login.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,7 +19,9 @@ import { LoginComponent } from './vistas/login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
