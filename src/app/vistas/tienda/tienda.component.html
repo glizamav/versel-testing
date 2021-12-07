@@ -1,1 +1,245 @@
-<p>tienda works!</p>
+<style>
+    body{
+        background-image: url(https://mcdn.wallpapersafari.com/medium/32/78/dTuctf.jpg);
+    }
+    .carousel-item {
+        max-height: 400px;
+    }
+
+    .padding {
+        padding: 10px;
+    }
+
+    footer {
+        background-color: lightgreen;
+        padding: 30px;
+        text-align: center;
+    }
+    .card img{
+        height: 300px;
+    }
+    .carousel .carousel-inner .carousel-item img{
+        height:auto;
+        width:auto;
+        margin: 0 -100px 0 0;
+        min-height: 300px;
+        overflow: hidden;
+    }
+    .carousel-caption{
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+    }
+    .card{
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+    }
+    .card-footer{
+        background-color: rgb(0, 0, 0);
+        color: white;
+        text-align: center;
+    }
+    .content{
+        margin-top: 20px;
+    }
+    .align-right{
+        text-align: right;
+        padding: 5px;
+    }
+    p{
+        font-size: 17px;
+        
+    }
+</style>
+
+
+<body>
+    <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/assets/img/PerritoCuidado.jpg" class="d-block w-100" alt="Perrito con dueños">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Recuerda sacarlos a pasear</h5>
+                    <p>Los perritos se ponen muy tristes cuando no salen de paseo, mas aun si vives en un departamento, recuerda sacarlos a pasear y no olvides la bolsita para su popo.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/assets/img/banner.jpg" class="d-block w-100" alt="Tortuga en el pasto">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Nos encantan las tortugas</h5>
+                    <p>Envianos fotos de tortugas y participa por el sorteo de un año gratis de alimento de tortuga feliz.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/assets/img/perritoPensando.jpg" class="d-block w-100" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>¿No encuentras lo que buscas?</h5>
+                    <p>Recuerda que siempre puedes enviarnos un correo a nuestra información de contacto para sugerir nuevos productos que quieras adquirir en la tienda.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+    <div class="container">
+        <div class="content">
+            
+            <h3><b>Cat</b>álogo</h3>
+            <p>En nuestra tienda contamos con una gran diversidad de mascotas exoticas y tradicionales, las cuales tienen el mejor cuidado y esperan por tener un nuevo hogar.</p>
+            
+                
+               
+
+  
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Mi carrito</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                        
+                            <div id="contenedor"></div>
+                        Total de la compra: <p id="total"></p> <br>
+                        
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button disabled type="button" class="btn btn-primary">Realizar compra</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="align-right">
+
+                <button onClick="revisarCarrito()" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" class="btn btn-success  position-relative">
+                    Revisar Carrito 
+                    <span id="carritoValue" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                        
+                        <span class="visually-hidden">unread messages</span>
+                      </span>
+                    <i class="bi bi-basket"></i>
+                
+                </button>
+            </div>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 g-4">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/assets/img/catita.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Catitas</h5>
+                            <p class="card-text">
+                                Las aves son el animal exotico más comun visto, quizas algunos incluso desconoscan que tienen esta categoria. Ideal para gente que quiere un amigo emplumado.
+                            </div>
+                        <div class="card-footer">
+                            <b>Valor: $4000</b><br>
+                            <button onClick="agregarMascota('catita')" type="button" class="btn btn-success">Lo quiero llevar!</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/assets/img/conejito.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Conejo enano</h5>
+                            <p class="card-text">
+                                Una pequeña bolita de algodon, con largas orejas quiere ser tu nuevo amigo es dificil resistirse a esos ojitos.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <b>Valor: $20000</b><br>
+                            <button onClick="agregarMascota('conejo')" type="button" class="btn btn-success">Lo quiero llevar!</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/assets/img/cuyo.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Cuyo</h5>
+                            <p class="card-text"> Muy populares entre los niños, a quien no les gustan.</p>
+                        </div>
+                        <div class="card-footer">
+                            <b>Valor: $1000</b><br>
+                            <button onClick="agregarMascota('cuyo')" type="button" class="btn btn-success">Lo quiero llevar!</button>
+                        
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/assets/img/perro.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Perrito</h5>
+                            <p class="card-text">Perritos pequeños y peludos de todas las razas y colores.</p>
+                        </div>
+                        <div class="card-footer">
+                            <b>Valor: $7000</b><br>
+                            <button onClick="agregarMascota('perro')" type="button" class="btn btn-success">Lo quiero llevar!</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/assets/img/gato.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Gatitos</h5>
+                            <p class="card-text">El mejor amigo del humano moderno, ademas dan buena suerte.</p>
+                        </div>
+                        <div class="card-footer">
+                            <b>Valor: $3000</b><br>
+                            <button onClick="agregarMascota('gato')" type="button" class="btn btn-success">Lo quiero llevar!</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="/assets/img/froggos.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Sapo con sombrero</h5>
+                            <p class="card-text">Una mascota imperdible, especial para los amantes de lo exotico, los sapos con sombrero son una rareza en el reino animal.</p>
+                        </div>
+                        <div class="card-footer">
+                            <b>Valor: $100000</b><br>
+                            <button onClick="agregarMascota('sapo')" type="button" class="btn btn-success">Lo quiero llevar! </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+
+
+    </div>
+    <footer>
+        Imagenes obtenidas de la web.<br>
+        2021
+    </footer>
+    <!-- Scrips 
+    <script src="tienda.js"></script> -->
+</body>
