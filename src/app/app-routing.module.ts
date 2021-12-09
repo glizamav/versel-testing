@@ -11,7 +11,8 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: '', component: HomeComponent },
   { path: 'tienda', component: TiendaComponent },
-  { path: 'producto', component: ProductoComponent }
+  { path: 'producto', component: ProductoComponent },
+  {path: '**', pathMatch: 'full', redirectTo: 'login'}
 
 ];
 

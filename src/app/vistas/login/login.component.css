@@ -14,8 +14,8 @@ html,body{
     
     .card{
     height: 370px;
-    margin-top: auto;
-    margin-bottom: auto;
+    margin-top: 20px;
+    margin-bottom: 20pxs;
     width: 400px;
     background-color: rgba(0,0,0,0.5) !important;
     }
