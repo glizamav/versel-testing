@@ -1,55 +1,4 @@
-<style>
-    body{
-        background-image: url(https://mcdn.wallpapersafari.com/medium/32/78/dTuctf.jpg);
-    }
-    .carousel-item {
-        max-height: 400px;
-    }
 
-    .padding {
-        padding: 10px;
-    }
-
-    footer {
-        background-color: lightgreen;
-        padding: 30px;
-        text-align: center;
-    }
-    .card img{
-        height: 300px;
-    }
-    .carousel .carousel-inner .carousel-item img{
-        height:auto;
-        width:auto;
-        margin: 0 -100px 0 0;
-        min-height: 300px;
-        overflow: hidden;
-    }
-    .carousel-caption{
-        background-color: rgba(255, 255, 255, 0.5);
-        border-radius: 10px;
-    }
-    .card{
-        background-color: rgba(0, 0, 0, 0.5);
-        color: white;
-    }
-    .card-footer{
-        background-color: rgb(0, 0, 0);
-        color: white;
-        text-align: center;
-    }
-    .content{
-        margin-top: 20px;
-    }
-    .align-right{
-        text-align: right;
-        padding: 5px;
-    }
-    p{
-        font-size: 17px;
-        
-    }
-</style>
 
 
 <body>
@@ -99,7 +48,7 @@
     <div class="container">
         <div class="content">
             
-            <h3><b>Cat</b>álogo</h3>
+            <h3><b>Cat</b>álogo de adopción</h3>
             <p>En nuestra tienda contamos con una gran diversidad de mascotas exoticas y tradicionales, las cuales tienen el mejor cuidado y esperan por tener un nuevo hogar.</p>
             
                 
@@ -116,23 +65,26 @@
                         </div>
                         <div class="modal-body">
                         
-                            <div id="contenedor"></div>
-                        Total de la compra: <p id="total"></p> <br>
+                        <div *ngFor="let mascotita of carritoList; index as i">
+                            {{mascotita}} ...............Costo de adopcion {{carritoPreciosList[i]}}
+                        </div>
+
+                        Costo de adopción total: {{total}} <br>
                         
                         </div>
                         <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button disabled type="button" class="btn btn-primary">Realizar compra</button>
+                        <button disabled type="button" class="btn btn-primary">Iniciar proceso de adopción</button>
                         </div>
                     </div>
                     </div>
                 </div>
                 <div class="align-right">
 
-                <button onClick="revisarCarrito()" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" class="btn btn-success  position-relative">
+                <button (click)="revisarCarrito()" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" class="btn btn-success  position-relative">
                     Revisar Carrito 
                     <span id="carritoValue" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-                        
+                        {{agregado}}
                         <span class="visually-hidden">unread messages</span>
                       </span>
                     <i class="bi bi-basket"></i>
@@ -150,7 +102,7 @@
                             </div>
                         <div class="card-footer">
                             <b>Valor: $4000</b><br>
-                            <button onClick="agregarMascota('catita')" type="button" class="btn btn-success">Lo quiero llevar!</button>
+                            <button (click)="agregarMascota('catita')" type="button" class="btn btn-success">Lo quiero llevar!</button>
                         </div>
                     </div>
                 </div>
@@ -165,7 +117,7 @@
                         </div>
                         <div class="card-footer">
                             <b>Valor: $20000</b><br>
-                            <button onClick="agregarMascota('conejo')" type="button" class="btn btn-success">Lo quiero llevar!</button>
+                            <button (click)="agregarMascota('conejo')" type="button" class="btn btn-success">Lo quiero llevar!</button>
                         </div>
                     </div>
                 </div>
@@ -178,7 +130,7 @@
                         </div>
                         <div class="card-footer">
                             <b>Valor: $1000</b><br>
-                            <button onClick="agregarMascota('cuyo')" type="button" class="btn btn-success">Lo quiero llevar!</button>
+                            <button (click)="agregarMascota('cuyo')" type="button" class="btn btn-success">Lo quiero llevar!</button>
                         
                         </div>
                     </div>
@@ -193,7 +145,7 @@
                         </div>
                         <div class="card-footer">
                             <b>Valor: $7000</b><br>
-                            <button onClick="agregarMascota('perro')" type="button" class="btn btn-success">Lo quiero llevar!</button>
+                            <button (click)="agregarMascota('perro')" type="button" class="btn btn-success">Lo quiero llevar!</button>
                         </div>
                     </div>
                 </div>
@@ -206,7 +158,7 @@
                         </div>
                         <div class="card-footer">
                             <b>Valor: $3000</b><br>
-                            <button onClick="agregarMascota('gato')" type="button" class="btn btn-success">Lo quiero llevar!</button>
+                            <button (click)="agregarMascota('gato')" type="button" class="btn btn-success">Lo quiero llevar!</button>
                         </div>
                     </div>
                 </div>
@@ -219,7 +171,7 @@
                         </div>
                         <div class="card-footer">
                             <b>Valor: $100000</b><br>
-                            <button onClick="agregarMascota('sapo')" type="button" class="btn btn-success">Lo quiero llevar! </button>
+                            <button (click)="agregarMascota('sapo')" type="button" class="btn btn-success">Lo quiero llevar! </button>
                         </div>
                     </div>
                 </div>
@@ -236,10 +188,7 @@
 
 
     </div>
-    <footer>
-        Imagenes obtenidas de la web.<br>
-        2021
-    </footer>
+  
     <!-- Scrips 
     <script src="tienda.js"></script> -->
 </body>
