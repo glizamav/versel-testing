@@ -1,36 +1,57 @@
-<h1>VISTA LOGIN</h1>
-<h1>Formularios</h1>
+<div class="container">
+    <div class="d-flex justify-content-center h-100">
+        <div class="card">
+            <div class="card-header">
+                <h2>Log In - Tortuga</h2>
+                <div class="redes_sociales">
+                    <span><a href="https://www.facebook.com/"><img src="../../../assets/img/facebook.png"
+                                alt="facebook_logo"></a></span>
+                    <span><a href="https://www.instagram.com/?hl=es"><img src="../../../assets/img/instagram.png"
+                                alt="instagram_logo"></a></span>
+                    <span><a href="https://www.whatsapp.com/?lang=es"><img src="../../../assets/img/whatsapp.png"
+                                alt="whatsapp_logo"></a></span>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="formContacto" (ngSubmit)="submit()">
 
-<form [formGroup]="formContacto" (ngSubmit)="submit()">
-    <label>Nombre</label><br>
-    <input type="text" formControlName="nombre" class="form-control" required><br>
-    <span *ngIf="this.formContacto.controls['nombre'].errors?.['required']">
-        Debe completar Nombre
-    </span>
-    <!--
-    <span *ngIf="formContacto.controls['nombre'].errors?.['required']">
-        Debe completar Nombre
-    </span>
-    <span *ngIf="formContacto.get['nombre'].errors?.minlength">
-        Debe tener minimo 10 caracteres
-    </span><br>-->
-    <label>Email:</label><br>
-    <input type="email" formControlName="email" class="form-control">
-    <span *ngIf="this.formContacto.controls['email'].errors?.['email']">
-        Email no válido
-    </span>
-   <br>
-    <label>ASunto:</label>
-    <textarea rows="10" cols="20" formControlName="asunto" class="form-control"></textarea>
-    <!--
-    <div *ngIf="formContacto.get['asunto'].errors?.maxlength">
-        <p>debe tener maximo 140 caracteres</p>
-    </div>-->
-    <button class="btn-outline-success" type="submit">Enviar</button>
-</form>
-<div>
-    {{mostrar}}
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i><img src="../../../assets/img/user.png" alt="user" class="login_icon"></i></span>
+                            </div>
+                            <input type="email" formControlName="email" class="form-control" placeholder="Ingrese Email">
+                        </div>
+
+                        <span *ngIf="this.formContacto.controls['email'].errors?.['email']">
+                            Email no válido
+                        </span>
+
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i><img src="../../../assets/img/key.png" alt="user" class="login_icon"></i></span>
+                            </div>
+                            <input type="password" formControlName="password" class="form-control" placeholder="Password" required>
+                        </div>
+
+                        <span *ngIf="this.formContacto.controls['password'].errors?.['required']">
+                            Debe incuir password
+                        </span>
+                        <br>
+
+                        <div class="row align-items-center remember">
+                            <input type="checkbox">Recordar usuario
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn float-right login_btn">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex justify-content-center links">
+                        ¿No tienes cuenta?<a href="/registro">¡Registrate!</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<button (click)="check()">Enviar</button>
-
-{{datos}}
