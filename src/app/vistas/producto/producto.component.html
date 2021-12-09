@@ -1,78 +1,87 @@
 <div class="container">
 
-<form [formGroup]="animalForm" (ngSubmit)="submit()">
-    <b>
-    <label>Nombre</label><br>
-    <input type="text" formControlName="nombre" class="form-control" required><br>
-    <span class="error" *ngIf="this.animalForm.controls['nombre'].errors?.['required']">
-        Debe completar Nombre
-    </span> 
-    <span class="error" *ngIf="this.animalForm.controls['nombre'].errors?.['maxlength']">
-        El nombre No debe superar los 16 caracteres
-    </span> <br>
-    <label>Descripcion</label><br>
-    <input type="text" formControlName="descripcion" class="form-control" required><br>
-    <span class="error" *ngIf="this.animalForm.controls['descripcion'].errors?.['required']">
-        Debe completar descripcion
-    </span> <br>
-    <span class="error" *ngIf="this.animalForm.controls['descripcion'].errors?.['maxlength']">
-        Descripcion no debe ser mayor a 200 caracteres
-    </span> <br>
-    <label>Precio</label><br>
-    <input type="number" formControlName="precio" class="form-control" required><br>
-    <span class="error" *ngIf="this.animalForm.controls['precio'].errors?.['required']">
-        Debe completar precio
-    </span>
-    <span class="error" *ngIf="this.animalForm.controls['precio'].errors?.['max']">
-        Precio no puede superar las 6 cifras
-    </span>
-    <br>
-    <label>Especie</label><br>
-    <input type="text" formControlName="especie" class="form-control" required><br>
-    <span class="error" *ngIf="this.animalForm.controls['especie'].errors?.['required']">
-        Debe completar especie
-    </span>
-    <span class="error" *ngIf="this.animalForm.controls['especie'].errors?.['maxlength']">
-        Especie no debe tener mas de 14 letras
-    </span> 
-    <!--<span *ngIf="this.formContacto.controls['nombre'].errors?.['required']">
-        Debe completar Nombre
-    </span>
-   
---></b>
-<br>
-    <button class="btn btn-outline-success" type="submit">Enviar</button>
-</form>
+    <div class="card">
+        
+        <div class="card-body">
+            <h5 class="card-title">Formulario para dejar en adopción</h5>
+            <form class="was-validated" [formGroup]="animalForm" (ngSubmit)="submit()">
+                <b>
+                    <label>Nombre</label><br>
+                    <input type="text" formControlName="nombre" class="form-control" required>
 
-<div *ngFor="let animal of listaAnimales">
-    {{animal.nombre}}
+                    <span class="error" *ngIf="this.animalForm.controls['nombre'].errors?.['required']">
+                        Debe completar Nombre
+                    </span>
+                    <span class="error" *ngIf="this.animalForm.controls['nombre'].errors?.['maxlength']">
+                        El nombre No debe superar los 16 caracteres
+                    </span> <br>
+                    <label>Descripcion</label><br>
+                    <textarea type="text" formControlName="descripcion" class="form-control" required></textarea>
+                    <span class="error" *ngIf="this.animalForm.controls['descripcion'].errors?.['required']">
+                        Debe completar descripcion
+                    </span> <br>
+                    <span class="error" *ngIf="this.animalForm.controls['descripcion'].errors?.['maxlength']">
+                        Descripcion no debe ser mayor a 200 caracteres
+                    </span> <br>
+                    <label>Costo de adopción</label><br>
+                    <input type="number" formControlName="precio" class="form-control" required>
+                    <span class="error" *ngIf="this.animalForm.controls['precio'].errors?.['required']">
+                        Debe asignar un  Costo de adopción
+                    </span>
+                    <span class="error" *ngIf="this.animalForm.controls['precio'].errors?.['max']">
+                        Costo de adopción no puede superar las 6 cifras
+                    </span>
+                    <br>
+                    <label>Especie</label><br>
+                    <input type="text" formControlName="especie" class="form-control" required>
+                    <span class="error" *ngIf="this.animalForm.controls['especie'].errors?.['required']">
+                        Debe completar especie
+                    </span>
+                    <span class="error" *ngIf="this.animalForm.controls['especie'].errors?.['maxlength']">
+                        Especie no debe tener mas de 14 letras
+                    </span>
+                    <!--<span *ngIf="this.formContacto.controls['nombre'].errors?.['required']">
+                    Debe completar Nombre
+                </span>
+               
+            -->
+                </b>
+                <br>
+                <button class="btn btn-outline-success" type="submit">Enviar</button>
+            </form>
+
+
+
+        </div>
+    </div>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Especie</th>
+                <th scope="col">Costo adopción</th>
+                <th scope="col">Editar</th>
+                <th scope="col">Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let animal of listaAnimales; index as i">
+                <th scope="row">{{animal.id}}</th>
+                <td>{{animal.nombre}}</td>
+                <td>{{animal.descripcion}}</td>
+                <td>{{animal.especie}}</td>
+                <td>$ {{animal.precio}}</td>
+                <td><button class="btn btn-outline-success" (click)="editar(i)">Editar</button>
+                </td>
+                <td>
+                    <button class="btn btn-outline-success" (click)="eliminar(i)">Eliminar</button>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
 </div>
-
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Descripcion</th>
-        <th scope="col">Especie</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Editar</th>
-        <th scope="col">Eliminar</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let animal of listaAnimales; index as i">
-        <th scope="row">{{animal.id}}</th>
-        <td>{{animal.nombre}}</td>
-        <td>{{animal.descripcion}}</td>
-        <td>{{animal.especie}}</td>
-        <td>{{animal.precio}}</td>
-        <td><button class="btn btn-outline-success" (click)="editar(i)">Editar</button>
-        </td>
-        <td>
-            <button class="btn btn-outline-success" (click)="eliminar(i)">Eliminar</button>
-        </td>
-      </tr>
-     
-    </tbody>
-  </table></div>
