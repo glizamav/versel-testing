@@ -9,6 +9,7 @@ import { TiendaComponent } from './vistas/tienda/tienda.component';
 import { LoginComponent } from './vistas/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductoComponent } from './vistas/producto/producto.component';
+import { EnvioComponent } from './vistas/envio/envio.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ProductoComponent } from './vistas/producto/producto.component';
     RegistroComponent,
     TiendaComponent,
     LoginComponent,
-    ProductoComponent
+    ProductoComponent,
+    EnvioComponent
   ],
   imports: [
     BrowserModule,
