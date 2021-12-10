@@ -1,0 +1,38 @@
+<p>envio works!</p>
+<div class="container">
+    <div class="d-flex justify-content-center h-100">
+        <div class="card">
+            <h2 style="text-align: center;">Datos de envio</h2>
+            <br>    
+            <form [formGroup]="formEnvio" (ngSubmit)="submit()">
+                <div class="mb-3" style="padding-left: 5%; padding-right: 5%;">
+                  <label for="pais" class="form-label">Pais</label>
+                  <input type="text" formControlName="pais" class="form-control" id="pais">
+                </div>
+
+                <div class="mb-3" style="padding-left: 5%; padding-right: 5%;">
+                    <label for="calle" class="form-label">Ingrese la calle</label>
+                    <input type="text" formControlName="calle" class="form-control" id="calle" required>
+                  </div>
+
+                  <div class="mb-3" style="padding-left: 5%; padding-right: 5%;">
+                    <label for="cuidad" class="form-label">Ingrese la cuidad</label>
+                    <input type="text"  formControlName="cuidad"class="form-control" id="cuidad" required>
+                  </div>
+
+                  <div class="mb-3" style="padding-left: 5%; padding-right: 5%;">
+                    <label for="region" class="form-label">Ingrese la region</label>
+                    <input type="text" formControlName="region" class="form-control" id="region">
+                  </div>
+
+                  <div class="mb-3" style="padding-left: 5%; padding-right: 5%;">
+                    <label for="codigoPostal" class="form-label">Codigo postal</label>
+                    <input type="number" formControlName="codigoPostal" class="form-control" id="codigoPostal">
+                  </div>
+
+            
+                <button type="submit" class="btn btn-primary" style="margin-left: 5%;">Submit</button>
+              </form>
+        </div>
+    </div>
+</div>
