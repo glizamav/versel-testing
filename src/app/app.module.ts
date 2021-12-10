@@ -10,6 +10,7 @@ import { LoginComponent } from './vistas/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductoComponent } from './vistas/producto/producto.component';
 import { EnvioComponent } from './vistas/envio/envio.component';
+import { FilterPipe } from './vistas/tienda/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EnvioComponent } from './vistas/envio/envio.component';
     TiendaComponent,
     LoginComponent,
     ProductoComponent,
-    EnvioComponent
+    EnvioComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

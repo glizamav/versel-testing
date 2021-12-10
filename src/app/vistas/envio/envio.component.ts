@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./envio.component.css']
 })
 export class EnvioComponent implements OnInit {
-
+  Visible = true;
 
   formEnvio = new FormGroup({
     pais: new FormControl('',[Validators.required, Validators.minLength(4)]),
@@ -27,8 +27,11 @@ export class EnvioComponent implements OnInit {
   }
 
   submit(){
-    const {pais,calle,cuidad,region,codigoPostal} = this.formEnvio.value;
-    if(this.formEnvio.valid) this.router.navigate(['/']);
+    //const {pais,calle,cuidad,region,codigoPostal} = this.formEnvio.value;
+    if(this.formEnvio.valid){
+      alert("Guardado datos de envio en el usuario");
+      this.Visible = false;
+    } 
     else alert("campos incompletos");
   }
 }

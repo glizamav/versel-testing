@@ -67,10 +67,11 @@
                         
                         <div *ngFor="let mascotita of carritoList; index as i">
                             {{mascotita}} ...............Costo de adopcion {{carritoPreciosList[i]}}
+                            
                         </div>
-
-                        Costo de adopción total: {{total}} <br>
                         
+                        Costo de adopción total: {{total}} <br>
+                        <app-envio></app-envio>
                         </div>
                         <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
@@ -91,8 +92,11 @@
                 
                 </button>
             </div>
+            <input class="form-control" type="text" [(ngModel)]="binding">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 g-4">
-                <div class="col" *ngFor="let animalito of animalitosList; index as i">
+                <br>
+                <div class="col" *ngFor="let animalito of animalitosList | filter : binding">
+                    <br><br>
                     <div class="card h-100">
                         <img [src]="animalito.imagen" class="card-img-top" alt="...">
                         <div class="card-body">

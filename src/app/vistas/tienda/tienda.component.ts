@@ -15,6 +15,7 @@ interface animalito{
   styleUrls: ['./tienda.component.css']
 })
 export class TiendaComponent implements OnInit {
+    binding: any = '';
     animalitosList: animalito[] = [
         {
             especie: "Catitas",

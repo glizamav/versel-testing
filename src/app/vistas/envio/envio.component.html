@@ -1,5 +1,6 @@
-<p>envio works!</p>
+
 <div class="container">
+  <div *ngIf="Visible">
     <div class="d-flex justify-content-center h-100">
         <div class="card">
             <h2 style="text-align: center;">Datos de envio</h2>
@@ -31,8 +32,12 @@
                   </div>
 
             
-                <button type="submit" class="btn btn-primary" style="margin-left: 5%;">Submit</button>
+                <button type="submit" class="btn btn-primary" style="margin-left: 5%;">Guardar Datos de envio</button>
               </form>
         </div>
     </div>
+  </div>
+  <div *ngIf="!Visible"> 
+    Datos de envio a calle: {{formEnvio.value.calle}}, {{formEnvio.value.cuidad}} - {{formEnvio.value.pais}}
+  </div>
 </div>
