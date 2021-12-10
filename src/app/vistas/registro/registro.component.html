@@ -8,39 +8,57 @@
                 <h2 class="form-title">Registrar</h2>
 
 
-                <form class="row g-6 needs-validation" novalidate method="post" oninput='up2.setCustomValidaty(up2.value != ip.value ? "La contraseña no es igual." : "")'>
-                    <div class="col-md-12">                      
-                      <input type="name" class="form-control form-control-sm" id="validationCustom01" placeholder="Tu Nombre" required>
-                      <div class="valid-feedback">
-                        Looks good!
-                      </div><br>
-                    </div><br>
-                    <br>
+                <div class="card-body">
+                    <form [formGroup]="formContacto" (ngSubmit)="submit()">
 
-                    <div >                        
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Correo" required>
-                        <div id="emailHelp" class="form-text">Debe ingresar un correo valido.</div><br>
-                    </div>
-
-                    <div class="col-mb-6">
-                        <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Contraseña" minlength="8" maxlength="20">
-                        <div id="passwordHelpBlock" class="form-control-sm3" name="up">
-                            Tu contraseña debe ser entre 8-20 caracteres.                        
+                        <div class="input-group form-group">
+                            
+                            <input type="text" formControlName="nombre" class="form-control" placeholder="Ingrese Nombre de usuario">
                         </div>
-                    </div>
-                    
-                    <div class="col-mb-6">
-                        <input type="password" id="inputPassword5" class="form-control" aria-describedby="passwordHelpBlock" placeholder="Contraseña">
-                            <div id="passwordHelpBlock" class="form-text" name="up2">
-                                Repite tu contraseña.                        
-                            </div>
-                    </div>
+                        
+                        <span *ngIf="this.formContacto.controls['nombre'].errors?.['required']">
+                            Nombre no válido
+                        </span>
+                        <br>
 
-                    <div class="col-12">
-                      <button class="btn" type="submit" [routerLink]="['/home']" routerLinkActive="router-link-active" target="_blank">Registrar</button>                      
-                    </div>
-                  
-                </form>
+                        <div class="input-group form-group">
+                           
+                            <input type="email" formControlName="email" class="form-control" placeholder="Ingrese Email">
+                        </div>
+                        <br>
+                        <span *ngIf="this.formContacto.controls['email'].errors?.['email']">
+                            Email no válido
+                        </span>
+
+
+                        <div class="input-group form-group">
+                            
+                            <input type="password" formControlName="password" class="form-control" placeholder="Password" required>
+                        </div>
+                       
+                        <span *ngIf="this.formContacto.controls['password'].errors?.['required']">
+                            Debe incuir password
+                        </span>
+                        <br>
+                        <br>
+                        <div class="input-group form-group">
+                        
+                            <input type="password" formControlName="password2" class="form-control" placeholder="Confirme Password" required>
+                        </div>
+                        
+                        <span *ngIf="this.formContacto.controls['password'].errors?.['required']">
+                            Debe incuir password
+                        </span>
+                        <br>
+                        <br>
+                        <div class="row align-items-center remember">
+                            <input type="checkbox">Recordar usuario
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </div>
+                    </form>
+                </div>
 
 
             </div>

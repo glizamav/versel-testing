@@ -1,0 +1,29 @@
+<p>contacto works!</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4"></div>
+        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4">
+            <h2>¿Dudas, consultas?</h2><br>
+            <p>¿Tienes preguntas? ¡Escribenos!</p><br>
+
+
+            <form (ngSubmit)="submit()">
+                <div class="input-group form-group">
+                    <input type="text" formControlName="nombre" class="form-control" placeholder="Nombre" required>
+                </div>
+                <div class="input-group form-group">
+                    <input type="text" formControlName="asunto" class="form-control" placeholder="Asunto" required>
+                </div>
+                <textarea name="comments" id="comments" cols="30" rows="10" placeholder="Escribe aqui tu mensaje"
+                    required></textarea>
+                <div class="form-group">
+                    <button type="submit" class="btn float-right login_btn">Enviar</button>
+                </div>
+            </form>
+        </div>
+        <div class="col-sm-12 col-md-4 col-lg-4 col-xl-4"></div>
+    </div>
+
+
+</div>
