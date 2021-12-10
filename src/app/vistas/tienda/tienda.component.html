@@ -92,86 +92,18 @@
                 </button>
             </div>
             <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 g-4">
-                <div class="col">
+                <div class="col" *ngFor="let animalito of animalitosList; index as i">
                     <div class="card h-100">
-                        <img src="/assets/img/catita.jpg" class="card-img-top" alt="...">
+                        <img [src]="animalito.imagen" class="card-img-top" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Catitas</h5>
+                            <h5 class="card-title">{{animalito.especie}}</h5>
                             <p class="card-text">
-                                Las aves son el animal exotico más comun visto, quizas algunos incluso desconoscan que tienen esta categoria. Ideal para gente que quiere un amigo emplumado.
+                                {{animalito.descripcion}}
+                            </p>
                             </div>
                         <div class="card-footer">
-                            <b>Valor: $4000</b><br>
-                            <button (click)="agregarMascota('catita')" type="button" class="btn btn-success">Lo quiero llevar!</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="/assets/img/conejito.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Conejo enano</h5>
-                            <p class="card-text">
-                                Una pequeña bolita de algodon, con largas orejas quiere ser tu nuevo amigo es dificil resistirse a esos ojitos.
-                            </p>
-                        </div>
-                        <div class="card-footer">
-                            <b>Valor: $20000</b><br>
-                            <button (click)="agregarMascota('conejo')" type="button" class="btn btn-success">Lo quiero llevar!</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="/assets/img/cuyo.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Cuyo</h5>
-                            <p class="card-text"> Muy populares entre los niños, a quien no les gustan.</p>
-                        </div>
-                        <div class="card-footer">
-                            <b>Valor: $1000</b><br>
-                            <button (click)="agregarMascota('cuyo')" type="button" class="btn btn-success">Lo quiero llevar!</button>
-                        
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="/assets/img/perro.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Perrito</h5>
-                            <p class="card-text">Perritos pequeños y peludos de todas las razas y colores.</p>
-                        </div>
-                        <div class="card-footer">
-                            <b>Valor: $7000</b><br>
-                            <button (click)="agregarMascota('perro')" type="button" class="btn btn-success">Lo quiero llevar!</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="/assets/img/gato.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Gatitos</h5>
-                            <p class="card-text">El mejor amigo del humano moderno, ademas dan buena suerte.</p>
-                        </div>
-                        <div class="card-footer">
-                            <b>Valor: $3000</b><br>
-                            <button (click)="agregarMascota('gato')" type="button" class="btn btn-success">Lo quiero llevar!</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img src="/assets/img/froggos.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Sapo con sombrero</h5>
-                            <p class="card-text">Una mascota imperdible, especial para los amantes de lo exotico, los sapos con sombrero son una rareza en el reino animal.</p>
-                        </div>
-                        <div class="card-footer">
-                            <b>Valor: $100000</b><br>
-                            <button (click)="agregarMascota('sapo')" type="button" class="btn btn-success">Lo quiero llevar! </button>
+                            <b>Valor: ${{animalito.precio}}</b><br>
+                            <button (click)="agregarMascota(animalito.especie)" type="button" class="btn btn-success">Lo quiero llevar!</button>
                         </div>
                     </div>
                 </div>
