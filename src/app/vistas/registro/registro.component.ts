@@ -26,7 +26,7 @@ export class RegistroComponent implements OnInit {
   }
 
   submit(){
-    const {nombre,email,password,password2} = this.formContacto.value;
+    //const {nombre,email,password,password2} = this.formContacto.value;
     if(this.formContacto.valid){
       let dataList = this.formContacto.value.password;
       let dataList2 = this.formContacto.value.password2;
@@ -34,6 +34,9 @@ export class RegistroComponent implements OnInit {
       console.log("Datos: ", dataList2);
       if (dataList == dataList2){ 
         this.router.navigate(['/']);}
-    } else alert("campos incompletos");
+    } else {
+      alert("campos incompletos");
+    }
+
   }
 }

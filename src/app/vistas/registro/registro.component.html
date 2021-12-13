@@ -19,6 +19,9 @@
                         <span *ngIf="this.formContacto.controls['nombre'].errors?.['required']">
                             Nombre no válido
                         </span>
+                        <span *ngIf="this.formContacto.controls['nombre'].errors?.['minlength']">
+                            Nombre  debe tener al menos 5 caracteres
+                        </span>
                         <br>
 
                         <div class="input-group form-group">
@@ -39,6 +42,9 @@
                         <span *ngIf="this.formContacto.controls['password'].errors?.['required']">
                             Debe incuir password
                         </span>
+                        <span *ngIf="this.formContacto.controls['password'].errors?.['minlength']">
+                            Password debe tener al menos 6 caracteres
+                        </span>
                         <br>
                         <br>
                         <div class="input-group form-group">
@@ -46,8 +52,11 @@
                             <input type="password" formControlName="password2" class="form-control" placeholder="Confirme Password" required>
                         </div>
                         
-                        <span *ngIf="this.formContacto.controls['password'].errors?.['required']">
+                        <span *ngIf="this.formContacto.controls['password2'].errors?.['required']">
                             Debe incuir password
+                        </span>
+                        <span *ngIf="this.formContacto.controls['password2'].errors?.['minlength']">
+                            Confirmacion debe tener al menos 6 caracteres
                         </span>
                         <br>
                         <br>

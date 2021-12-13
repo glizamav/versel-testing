@@ -1,6 +1,6 @@
 
 <div class="container">
-  <div *ngIf="Visible">
+  <div>
     <div class="d-flex justify-content-center h-100">
         <div class="card">
             <h2 style="text-align: center;">Datos de envio</h2>
@@ -33,11 +33,14 @@
 
             
                 <button type="submit" class="btn btn-primary" style="margin-left: 5%;">Guardar Datos de envio</button>
+                <div *ngIf="!Visible"> 
+                  <br>
+                  <button [routerLink]="['/pago']" routerLinkActive="router-link-active"  class="btn btn-success" style="margin-left: 5%;">Ir a la pagina de pagos</button>
+                
+                </div>
               </form>
         </div>
     </div>
   </div>
-  <div *ngIf="!Visible"> 
-    Datos de envio a calle: {{formEnvio.value.calle}}, {{formEnvio.value.cuidad}} - {{formEnvio.value.pais}}
-  </div>
+  
 </div>

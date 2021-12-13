@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProductoComponent } from './vistas/producto/producto.component';
 import { EnvioComponent } from './vistas/envio/envio.component';
 import { FilterPipe } from './vistas/tienda/filter.pipe';
+import { FinalCompraComponent } from './vistas/final-compra/final-compra.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { FilterPipe } from './vistas/tienda/filter.pipe';
     LoginComponent,
     ProductoComponent,
     EnvioComponent,
-    FilterPipe
+    FilterPipe,
+    FinalCompraComponent
   ],
   imports: [
     BrowserModule,
