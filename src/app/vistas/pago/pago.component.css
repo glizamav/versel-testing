@@ -82,6 +82,10 @@ width: 100%;
 outline:none;
 }
 
+#exp_date{
+  width: 700px;
+}
+
 .expcvv {
   display:flex;
   justify-content: space-between;
